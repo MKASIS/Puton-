@@ -1,0 +1,12 @@
+
+
+import random
+
+# получаем 30 случайных целых чисел в диапазоне от 0 до 5
+numbers = [random.randint(0, 5) for i in range(30)]
+
+# выводим только нечетные числа
+print("Нечетные числа:")
+for num in numbers:
+    if num % 2 == 1:
+        print(num)
