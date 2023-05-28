@@ -1,0 +1,26 @@
+
+
+# Списки оценок по экзаменам для каждой из 3 групп студентов
+group1 = [[4, 5, 3], [5, 5, 4], [3, 4, 4], [5, 3, 5], [4, 4, 5], [3, 3, 4], [5, 4, 5], [4, 5, 5], [5, 5, 5], [3, 4, 5],
+          [3, 5, 4], [4, 3, 5], [5, 4, 4], [4, 5, 3], [5, 5, 3], [4, 5, 4], [5, 4, 5], [3, 5, 4], [4, 5, 4], [3, 5, 4]]
+group2 = [[5, 4, 5], [4, 5, 5], [4, 4, 5], [5, 5, 4], [4, 5, 3], [5, 4, 4], [4, 5, 5], [5, 3, 5], [5, 5, 4], [3, 5, 4],
+          [4, 3, 5], [4, 5, 4], [3, 5, 4], [5, 5, 5], [4, 4, 5], [3, 5, 5], [5, 4, 4], [5, 5, 4], [4, 5, 5], [3, 4, 5]]
+group3 = [[5, 4, 4], [3, 5, 3], [4, 4, 5], [5, 5, 5], [5, 5, 4], [4, 3, 5], [5, 4, 4], [4, 5, 5], [5, 5, 4], [3, 4, 5],
+          [4, 5, 5], [3, 5, 4], [5, 5, 5], [4, 4, 4], [5, 5, 4], [4, 5, 5], [3, 4, 4], [4, 4, 3], [5, 4, 4], [4, 5, 4]]
+
+# Функция для нахождения среднего балла для каждой группы
+def average_score(group):
+    return sum([sum(exam)/3 for exam in group])/len(group)
+
+# Находим среднюю оценку для каждой группы
+average_score_group1 = average_score(group1)
+average_score_group2 = average_score(group2)
+average_score_group3 = average_score(group3)
+
+# Определяем лучшую группу по среднему баллу
+if average_score_group1 > average_score_group2 and average_score_group1 > average_score_group3:
+    print("Лучшая группа - первая группа со средним баллом", average_score_group1)
+elif average_score_group2 > average_score_group1 and average_score_group2 > average_score_group3:
+    print("Лучшая группа - вторая группа со средним баллом", average_score_group2)
+else:
+    print("Лучшая группа - третья группа со средним баллом", average_score_group3)
