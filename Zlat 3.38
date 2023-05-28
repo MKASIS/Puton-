@@ -1,0 +1,7 @@
+
+for a in range(1, 10):
+    for b in range(0, 10):
+        for c in range(0, 10):
+            if 100*a + 10*b + c - 10*b - c + 10*b + a == 456:
+                print("Число х равно", 100*a + 10*b + c)
+                exit()
