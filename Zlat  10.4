@@ -1,0 +1,11 @@
+
+
+import random
+
+# получаем 50 случайных целых чисел в диапазоне от 0 до 3
+numbers = [random.randint(0, 3) for i in range(50)]
+
+# выводим только единицы и нули
+for num in numbers:
+    if num == 0 or num == 1:
+        print(num)
