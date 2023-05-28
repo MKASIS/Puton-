@@ -1,0 +1,9 @@
+
+rainfall = [3, 8, 2, 4, 6, 8, 9, 3, 2, 5, 1, 8, 7, 2, 4, 7, 6, 3, 5, 1, 9, 2, 4, 6, 7, 5, 1, 8, 3, 5]
+
+max_rainfall_day = 1
+for i in range(1, len(rainfall)):
+    if rainfall[i] >= rainfall[max_rainfall_day-1]:
+        max_rainfall_day = i+1
+
+print(f"Наибольшее количество осадков выпало {max_rainfall_day}-ого числа ({rainfall[max_rainfall_day-1]} мм)")
