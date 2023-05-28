@@ -1,0 +1,34 @@
+
+а)
+# Ввод данных
+scores = []
+for i in range(15):
+    print(f"Введите результаты спортсмена {i+1} в трех видах многоборья (через пробел): ")
+    scores.append(list(map(float, input().split())))
+
+# Вычисление среднего количества баллов для каждого спортсмена
+avg_scores = []
+for s in scores:
+    avg_scores.append(sum(s) / 3)
+
+# Вывод результатов
+print("Средние баллы для каждого спортсмена:")
+for i, a in enumerate(avg_scores):
+    print(f"Спортсмен {i+1}: {a}")
+
+
+б)
+# Ввод данных
+scores = []
+for i in range(15):
+    print(f"Введите результаты спортсмена {i+1} в трех видах многоборья (через пробел): ")
+    scores.append(list(map(float, input().split())))
+
+# Вычисление среднего количества баллов для каждого вида программы
+avg_scores = [sum(s) / 15 for s in zip(*scores)]
+
+# Вывод результатов
+print("Средние баллы по каждому виду программы:")
+print(f"Обязательная программа: {avg_scores[0]}")
+print(f"Короткая программа: {avg_scores[1]}")
+print(f"Произвольная программа: {avg_scores[2]}")
