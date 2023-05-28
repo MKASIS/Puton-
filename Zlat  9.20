@@ -1,0 +1,30 @@
+
+import matplotlib.pyplot as plt
+
+# Получаем значение п от пользователя
+p = int(input("Введите число: "))
+
+# Список для хранения количества делителей каждого числа
+divisors = []
+
+# Считаем количество делителей для каждого числа от 1 до п
+for i in range(1, p+1):
+    count = 0
+    for j in range(1, i+1):
+        if i%j == 0:
+            count += 1
+    divisors.append(count)
+
+# Отображаем график на экране
+plt.bar(range(1, p+1), divisors)
+
+# Добавляем надписи на оси X и Y
+plt.xlabel('Числа от 1 до ' + str(p))
+plt.ylabel('Количество делителей')
+
+# Добавляем надписи над столбцами
+for i in range(1, p+1):
+    plt.text(i-0.2, divisors[i-1]+0.1, str(i)+'+'*divisors[i-1])
+
+# Отображаем график на экране
+plt.show()
