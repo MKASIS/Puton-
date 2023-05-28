@@ -1,0 +1,46 @@
+
+
+import random
+
+# функция для проверки угрозы ладьи
+def is_rook_threat(a, b, c, d):
+    return a == c or b == d
+
+# функция для проверки угрозы слона
+def is_bishop_threat(a, b, c, d):
+    return abs(a - c) == abs(b - d)
+
+# функция для проверки возможности хода короля
+def can_king_move(a, b, c, d):
+    return abs(a - c) <= 1 and abs(b - d) <= 1
+
+# функция для проверки угрозы ферзя
+def is_queen_threat(a, b, c, d):
+    return is_rook_threat(a, b, c, d) or is_bishop_threat(a, b, c, d)
+
+# генерируем случайные числа, каждое не превосходит 8
+a, b, c, d = random.randint(1, 8), random.randint(1, 8), random.randint(1, 8), random.randint(1, 8)
+
+# выводим координаты сгенерированных чисел
+print("Generated coordinates: ({}, {}), ({}, {})".format(a, b, c, d))
+
+# проверяем наличие угрозы/возможности хода для каждой фигуры и выводим соответствующий результат
+if is_rook_threat(a, b, c, d):
+    print("Rook threatens ({}, {})".format(c, d))
+else:
+    print("Rook does not threaten ({}, {})".format(c, d))
+
+if is_bishop_threat(a, b, c, d):
+    print("Bishop threatens ({}, {})".format(c, d))
+else:
+    print("Bishop does not threaten ({}, {})".format(c, d))
+
+if can_king_move(a, b, c, d):
+    print("King can move to ({}, {})".format(c, d))
+else:
+    print("King cannot move to ({}, {})".format(c, d))
+
+if is_queen_threat(a, b, c, d):
+    print("Queen threatens ({}, {})".format(c, d))
+else:
+    print("Queen does not threaten ({}, {})".format(c, d))
