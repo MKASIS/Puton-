@@ -1,0 +1,22 @@
+
+import random
+
+# подбрасываем монету 100 и 1000 раз
+num_tosses = [100, 1000]
+for tosses in num_tosses:
+    # считаем количество выпадений 0 и 1
+    zeros = 0
+    ones = 0
+    for i in range(tosses):
+        result = random.randint(0, 1)
+        if result == 0:
+            zeros += 1
+        else:
+            ones += 1
+    # считаем относительную частоту появления каждого числа
+    zero_freq = zeros / tosses
+    one_freq = ones / tosses
+    # выводим результаты на экран
+    print("Подбрасываний монеты:", tosses)
+    print("Относительная частота числа 0:", zero_freq)
+    print("Относительная частота числа 1:", one_freq)
